@@ -1,0 +1,12 @@
+.buttonselected {
+  background-color: #f1d0cd;
+  border: 1px solid #e09a94;
+  border-radius: 3px;
+  font-weight: 700;
+}
+
+.buttondefault {
+  background-color: #d9e7d5;
+  border:1px solid #97B980;
+  border-radius: 3px;
+}

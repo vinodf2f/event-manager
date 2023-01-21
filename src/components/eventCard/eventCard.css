@@ -1,0 +1,48 @@
+
+.eventCard {
+    padding: 10px;
+    background-color: #dde8fa;
+    margin: 5px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    min-width: 140px
+  }
+  
+  
+  .disabled {
+    background-color: lightgray;
+  }
+  
+  .eventNameIntial {
+    margin-right: 10px;
+    font-weight: 700;
+  }
+  
+  .verticalLine {
+    width: 1px;
+    background-color: black;
+    height: 100%;
+    margin: 5px;
+  }
+  
+  .eventInfoSection {
+    line-height: 16px;
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    }
+  
+  .eventCatogory{
+    font-size: 10px;
+  }
+  
+  #eventName {
+    font-size: 12px;
+    font-weight: 700;
+  }
+  
+    
+  .buttonContainer {
+    align-self: flex-end;
+  }
