@@ -2,7 +2,7 @@
   "name": "event-manager",
   "version": "0.1.1",
   "private": true,
-  "homepage": "https://vinodf2f.github.io/eventManager",
+  "homepage": "https://vinodf2f.github.io/event-manager",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
