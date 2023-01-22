@@ -1,6 +1,6 @@
 export const eventManegerTexts = {
   allEventsHeader: "All Events",
-  selectedEventsHeader: "Selected",
+  selectedEventsHeader: "Selected events",
   eventAlreadyAdded: "event already added",
   conflictingEvent: "conflicting event",
   errorText: "Something went wrong..!",
