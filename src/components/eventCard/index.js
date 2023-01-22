@@ -7,13 +7,9 @@ import "./eventCard.css";
 function EventCard({ data, cardVariant, handleActionClick }) {
   const { id, event_name, event_category, start_time, end_time } = data;
 
-  const eventNameIntial = event_name.charAt(0);
+  const eventNameIntial = event_category.charAt(0);
   const startTime = getTime(start_time);
   const endTime = getTime(end_time);
-
-  const _handleActionClick = () => {
-    handleActionClick(data);
-  };
 
   return (
     <div className={`eventCard ${cardVariant}`}>
@@ -32,7 +28,7 @@ function EventCard({ data, cardVariant, handleActionClick }) {
             }
             variant={cardVariant}
             disabled={cardVariant === cardVariantTypes.disabled}
-            onClick={_handleActionClick}
+            onClick={handleActionClick}
           />
         </div>
       </div>

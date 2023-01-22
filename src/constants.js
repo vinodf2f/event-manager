@@ -3,6 +3,7 @@ export const eventManegerTexts = {
   selectedEventsHeader: "Selected",
   eventAlreadyAdded: "event already added",
   conflictingEvent: "conflicting event",
+  errorText: "Something went wrong..!",
 };
 
 export const eventsURL =

@@ -3,7 +3,7 @@ import "./button.css";
 function Button({ text, onClick, variant, disabled }) {
   return (
     <button
-      className={`button${variant}`}
+      className={`button button${variant}`}
       onClick={onClick}
       disabled={disabled}
     >

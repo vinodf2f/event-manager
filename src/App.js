@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import EventContainer from "./components/EventContainer";
+import Loader from "./components/Loader";
 import { isValidEvent } from "./helper";
 import useFetch from "./hooks/useFetch";
 import { eventManegerTexts, eventsURL } from "./constants";
@@ -27,9 +28,9 @@ function App() {
     setSelectedEvents([...selectedEvents, event]);
   };
 
-  if (isLoading) return <div>Fetching events...</div>;
+  if (isLoading) return <Loader />;
 
-  if (error) return <div>Something went wrong</div>;
+  if (error) return <div>{eventManegerTexts.errorText}</div>;
 
   return (
     <div className="container">

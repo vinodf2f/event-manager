@@ -1,6 +1,6 @@
 import React from "react";
 import { getCardVariant } from "../../helper";
-import EventCard from "../eventCard";
+import EventCard from "../EventCard";
 
 function EventContainer({
   header,
