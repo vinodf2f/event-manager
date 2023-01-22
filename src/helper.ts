@@ -1,6 +1,22 @@
-import { cardVariantTypes, eventManegerTexts } from "./constants";
+import { cardData, cardVariant, cardVariantTypes, eventManegerTexts } from "./constants";
 
-export function getCardVariant(card, selectedEvents, isSelectedSection) {
+interface getCardVariantProps {
+  card: any;
+  selectedEvents: cardData[];
+  isSelectedSection: boolean ;
+}
+
+
+interface isValidEventResponse {
+  isValid: boolean;
+  errorMessage?: string | undefined;
+}
+
+export function getCardVariant({
+  card,
+  selectedEvents,
+  isSelectedSection,
+}: getCardVariantProps): keyof cardVariant {
   if (isSelectedSection) return cardVariantTypes.selected;
 
   if (selectedEvents.length < 3) {
@@ -12,7 +28,7 @@ export function getCardVariant(card, selectedEvents, isSelectedSection) {
   return cardVariantTypes.default;
 }
 
-export const getTime = (date) => {
+export const getTime = (date: string) => {
   return new Date(date).toLocaleString("en-US", {
     hour: "numeric",
     minute: "numeric",
@@ -20,7 +36,7 @@ export const getTime = (date) => {
   });
 };
 
-export const checkIfAlreadySelected = (selectedEvents, event) => {
+export const checkIfAlreadySelected = (selectedEvents: any[], event: any) => {
   return selectedEvents.find((currentEvent) => currentEvent.id === event.id);
 };
 
@@ -29,7 +45,7 @@ export const checkIfAlreadySelected = (selectedEvents, event) => {
 // 1-3
 // 2-2
 
-export const checkIsConflicting = (selectedEvents, event) => {
+export const checkIsConflicting = (selectedEvents: any[], event: any) => {
   return selectedEvents.some((existingEvent) => {
     debugger;
     const existingStart = new Date(existingEvent.start_time);
@@ -47,13 +63,17 @@ export const checkIsConflicting = (selectedEvents, event) => {
   });
 };
 
-export const isValidEvent = (selectedEvents, event) => {
+export const isValidEvent = (
+  selectedEvents: any[],
+  event: any
+): isValidEventResponse => {
   if (checkIfAlreadySelected(selectedEvents, event)) {
-    alert(eventManegerTexts.eventAlreadyAdded);
-    return false;
+    return {
+      isValid: false,
+      errorMessage: eventManegerTexts.eventAlreadyAdded,
+    };
   } else if (checkIsConflicting(selectedEvents, event)) {
-    alert(eventManegerTexts.conflictingEvent);
-    return false;
+    return { isValid: false, errorMessage: eventManegerTexts.conflictingEvent };
   }
-  return true;
+  return { isValid: true };
 };

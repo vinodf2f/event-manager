@@ -9,23 +9,29 @@ body {
 
 .container {
   display: flex;
-  padding: 20;
   justify-content: space-between;
-  border: 1px solid black;
+  /* background-color: #536c50; */
   margin: 10px;
+  margin-bottom: 0;
+  border-radius: 5px;
+min-height: 100vh;
 }
 
 .eventContainer {
   flex: 0.5;
   border: 1px solid black;
   margin: 10px;
+  border-radius: 5px;
+  background-color: #536c50;
+  
 }
 .headerText {
   font-size: 24px;
   text-align: center;
   text-decoration: underline;
   text-underline-offset: 10px;
-  text-decoration-thickness: 1px
+  text-decoration-thickness: 1px;
+  font-weight: 300;
 }
 
 .eventsWrapper {

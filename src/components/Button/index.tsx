@@ -1,6 +1,16 @@
 import React from "react";
+import { cardVariant } from "../../constants";
 import "./button.css";
-function Button({ text, onClick, variant, disabled }) {
+
+
+interface ButtonProps {
+  text:string;
+  onClick:()=>{};
+  variant: keyof cardVariant;
+  disabled: boolean
+}
+
+function Button({ text, onClick, variant, disabled }:ButtonProps) {
   return (
     <button
       className={`button button${variant}`}

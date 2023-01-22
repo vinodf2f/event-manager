@@ -1,10 +1,16 @@
 import React from "react";
 import { getTime } from "../../helper";
 import Button from "../Button";
-import { cardVariantTypes } from "../../constants";
+import { cardVariant, cardVariantTypes, cardData } from "../../constants";
 import "./eventCard.css";
 
-function EventCard({ data, cardVariant, handleActionClick }) {
+interface EventCardProps {
+  data: cardData;
+  cardVariant: keyof cardVariant;
+  handleActionClick: any;
+}
+
+function EventCard({ data, cardVariant, handleActionClick }: EventCardProps) {
   const { id, event_name, event_category, start_time, end_time } = data;
 
   const eventNameIntial = event_category.charAt(0);
@@ -12,7 +18,7 @@ function EventCard({ data, cardVariant, handleActionClick }) {
   const endTime = getTime(end_time);
 
   return (
-    <div className={`eventCard ${cardVariant}`}>
+    <div className={`eventCard ${cardVariant}`} key={id}>
       <p className="eventNameIntial">{eventNameIntial}</p>
       <div className="verticalLine" />
       <div className="eventInfoSection">
