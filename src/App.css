@@ -9,10 +9,10 @@ body {
 
 .container {
   display: flex;
-  justify-content: space-between;
-  /* background-color: #536c50; */
-  margin: 10px;
-  margin-bottom: 0;
+  justify-content: center;
+  background-color: #536c50;
+  margin: 5px;
+
   border-radius: 5px;
 min-height: 100vh;
 }
@@ -20,7 +20,7 @@ min-height: 100vh;
 .eventContainer {
   flex: 0.5;
   border: 1px solid black;
-  margin: 10px;
+  margin: 4px;
   border-radius: 5px;
   background-color: #536c50;
   
