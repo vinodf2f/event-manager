@@ -11,7 +11,10 @@
   cursor: auto;
 }
 
-.button:active {
+.buttonselected:active {
+  transform: scale(0.9);
+}
+.buttondefault:active {
   transform: scale(0.9);
 }
 
